@@ -27,11 +27,13 @@ public class FPSController : MonoBehaviour
 
     static public bool isGround;
     public string lookingobject;
-
+    public bool mouseIsLocking;
 
     private void Start()
     {
         cc = GetComponent<CharacterController>();
+        Cursor.lockState = CursorLockMode.Locked;
+        mouseIsLocking = true;
     }
 
     private void Update()
@@ -59,7 +61,23 @@ public class FPSController : MonoBehaviour
             moveSpeedv = 5;
             moveSpeedh = 4;
         }
-        Cursor.lockState = CursorLockMode.Locked;
+        if(mouseIsLocking)
+        {
+            if (Input.GetButtonDown("OpenMenu"))
+            {
+                
+                Cursor.lockState = CursorLockMode.None;
+                
+            }
+        }
+        if (mouseIsLocking == false)
+        {
+            if (Input.GetButtonDown("OpenMenu"))
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+                //mouseIsLocking = true;
+            }
+        }
         isGround = Physics.CheckSphere(groundCheck.position, checkRadius, groundLayer);
 
         if (isGround && velocity.y < 0)
