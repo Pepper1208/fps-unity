@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 0}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: f487f754f41d11243b71ec7235a699a3, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -6969,7 +6969,7 @@ MonoBehaviour:
   fpscam: {fileID: 1799927862}
   shootingobject: 
   fractured: {fileID: 4956949996432519320, guid: a8db1b61647ecde4d9d815912faec16f, type: 3}
-  breakForce: 200
+  breakForce: 100
   breakSound: {fileID: 1418647966}
 --- !u!64 &1608365848
 MeshCollider:
