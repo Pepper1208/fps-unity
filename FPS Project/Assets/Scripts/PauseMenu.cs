@@ -24,6 +24,11 @@ public class PauseMenu : MonoBehaviour
         {
             Debug.Log("Errors is occured in pause menu activating");
         }
+
+        if (pausemenu.active == false)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
     }
 
     public void ReturnToStart()

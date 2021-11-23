@@ -72,7 +72,7 @@ public class FPSController : MonoBehaviour
             // Detect the variable
             if (pressedESC % 2 == 1)
             {
-                Cursor.lockState = CursorLockMode.Locked;
+                //Cursor.lockState = CursorLockMode.Locked;
                 Cursor.lockState = CursorLockMode.Confined;
                 // Debug.Log(pressedESC);
             } else if (pressedESC % 2 == 0)
