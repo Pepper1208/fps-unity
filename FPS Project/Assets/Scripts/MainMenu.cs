@@ -13,6 +13,7 @@ public class MainMenu : MonoBehaviour
 
     public void QuitGame()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         Application.Quit();
     }
 }

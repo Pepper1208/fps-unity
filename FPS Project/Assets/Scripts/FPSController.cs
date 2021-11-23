@@ -24,16 +24,16 @@ public class FPSController : MonoBehaviour
 
     public LayerMask groundLayer;
 
-
     static public bool isGround;
     public string lookingobject;
-    public bool mouseIsLocking;
+
+    static public int pressedESC = 0;
 
     private void Start()
     {
         cc = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
-        mouseIsLocking = true;
+        pressedESC = 0;
     }
 
     private void Update()
@@ -61,23 +61,33 @@ public class FPSController : MonoBehaviour
             moveSpeedv = 5;
             moveSpeedh = 4;
         }
-        if(mouseIsLocking)
+        
+        // Detecting ESC pressing amount
+
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (Input.GetButtonDown("OpenMenu"))
-            {
-                
-                Cursor.lockState = CursorLockMode.None;
-                
-            }
-        }
-        if (mouseIsLocking == false)
-        {
-            if (Input.GetButtonDown("OpenMenu"))
+            // Add 1 to pressedESC
+            pressedESC++;
+
+            // Detect the variable
+            if (pressedESC % 2 == 1)
             {
                 Cursor.lockState = CursorLockMode.Locked;
-                //mouseIsLocking = true;
+                Cursor.lockState = CursorLockMode.Confined;
+                // Debug.Log(pressedESC);
+            } else if (pressedESC % 2 == 0)
+            {
+                Cursor.lockState = CursorLockMode.Confined;
+                pressedESC = 0;
+                // Debug.Log(pressedESC);
+            } else {
+                Debug.Log("The ESC detection caused error.");
             }
+
+            
+            
         }
+
         isGround = Physics.CheckSphere(groundCheck.position, checkRadius, groundLayer);
 
         if (isGround && velocity.y < 0)

@@ -113,14 +113,10 @@ public class Gun: MonoBehaviour
         Vector3 targetPoint;
         if (Physics.Raycast(ray, out hit))
         {
-
-
             targetPoint = hit.point;
         }
         else
         {
-
-
             targetPoint = ray.GetPoint(1000);
         }
 
@@ -129,8 +125,6 @@ public class Gun: MonoBehaviour
         //Destroy(bulletClone, 4f);
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
         {
-            
-
             Target target = hit.transform.GetComponent<Target>();
             if(target != null)
             {
@@ -139,7 +133,6 @@ public class Gun: MonoBehaviour
 
             GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(impactGO, 1f);
-            
             
         }
         
