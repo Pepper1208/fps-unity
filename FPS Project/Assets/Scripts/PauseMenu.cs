@@ -20,16 +20,17 @@ public class PauseMenu : MonoBehaviour
         {
             pausemenu.SetActive(false);
             Time.timeScale = 1f;
+            Cursor.lockState = CursorLockMode.Locked;
         } else
         {
             Debug.Log("Errors is occured in pause menu activating");
         }
 
         // Not usable
-        // if (pausemenu.active == false)
-        // {
-        //     Cursor.lockState = CursorLockMode.Locked;
-        // }
+         //if (pausemenu.active == false)
+         //{
+         //    Cursor.lockState = CursorLockMode.Locked;
+         //}
     }
 
     public void ReturnToStart()

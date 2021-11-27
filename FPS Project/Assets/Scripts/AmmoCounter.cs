@@ -17,12 +17,21 @@ public class AmmoCounter : MonoBehaviour
     public float timer = 0.0f;
     public float ammo_num = 0.0f;
     public float ammo_update = 0.0f;
-    public float ammo_max_num = 40.0f;
+    public float ammo_max_num;
     public double ammo_int = 0;
     public float originalAmmo;
     void Start()
     {
+        if (WeaponSwitching.selectedWeapon == 0)
+        {
+            ammo_max_num = 40;
+        }
+        if (WeaponSwitching.selectedWeapon == 1)
+        {
+            ammo_max_num = 20;
+        }
         reload_time = 2.0f;
+        
         ammoDisplay.text = Gun.maxAmmo.ToString();
         stopReload = false;
         ammoSlider.maxValue = Gun.maxAmmo;
@@ -32,6 +41,7 @@ public class AmmoCounter : MonoBehaviour
     
     void Update()
     {
+        
         // Start reloading script e.g. animation
         if (reloading)
         {

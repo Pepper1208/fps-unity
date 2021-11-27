@@ -18,8 +18,8 @@ public class Gun: MonoBehaviour
     private float nextTimeToFire = 0f;
     public AudioSource shootSound;
     
-    
-    
+
+
     static public bool isReloading = false;
     public Transform target;
     public float speed;
@@ -27,18 +27,28 @@ public class Gun: MonoBehaviour
     static public float reloadTime = 2f;
     
     static public float currentAmmo;
+
+    static public float maxAmmo;
     
-    static public float maxAmmo = 40f;
-    
+
     //public Vector3 originrotation = new Vector3(0, 10, 0);
     void Start()
     {
+        if(WeaponSwitching.selectedWeapon == 0)
+        {
+            maxAmmo = 40;
+        }
+        if (WeaponSwitching.selectedWeapon == 1)
+        {
+            maxAmmo = 20;
+        }
         isReloading = false;
         currentAmmo = maxAmmo;
+        
     }
     void Update()
     {
-        
+       
         if (Input.GetMouseButton(1))
         {
             transform.localRotation = Quaternion.Euler(0, 0, 0);
