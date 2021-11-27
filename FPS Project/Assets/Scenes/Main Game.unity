@@ -3254,6 +3254,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: glass
       objectReference: {fileID: 0}
+    - target: {fileID: 8277499849200892472, guid: b73413267bdbb5f4b9e4bcbddd25bd86, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8277499849425783378, guid: b73413267bdbb5f4b9e4bcbddd25bd86, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8277499849425783380, guid: b73413267bdbb5f4b9e4bcbddd25bd86, type: 3}
       propertyPath: fpscam
       value: 
